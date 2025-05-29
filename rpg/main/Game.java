@@ -1,4 +1,10 @@
-import java.util.Scanner;
+package main;
+
+import child.Demon;
+import child.Hero;
+import child.Oni;
+import child.Slime;
+import parent.Character;
 
 public class Game {
     public static void main(String[] args) {
@@ -11,8 +17,10 @@ public class Game {
 
             while (hero.isAlive() && monster.isAlive()) {
                 // ヒーローのターン
-                int heroDamage = hero.attack();
-                monster.takeDamage(heroDamage);
+                if (hero instanceof Character && monster instanceof Character) {
+                    int heroDamage = hero.attack();
+                    monster.takeDamage(heroDamage);
+                }
                 System.out.println(monster.getName() + "の HP: " + monster.getHp());
 
                 if (!monster.isAlive()) {
@@ -21,8 +29,10 @@ public class Game {
                 }
 
                 // モンスターのターン
-                int monsterDamage = monster.attack();
-                hero.takeDamage(monsterDamage);
+                if (monster instanceof Character && hero instanceof Character) {
+                    int monsterDamage = monster.attack();
+                    hero.takeDamage(monsterDamage);
+                }
                 System.out.println(hero.getName() + "の HP: " + hero.getHp());
 
                 if (!hero.isAlive()) {
@@ -31,7 +41,6 @@ public class Game {
                 }
             }
         }
-
         System.out.println("\nモンスターを全て倒した！ " + hero.getName() + " の勝利！");
     }
 }

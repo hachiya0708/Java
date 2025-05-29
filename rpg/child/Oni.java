@@ -1,3 +1,7 @@
+package child;
+
+import parent.Character;
+
 public class Oni extends Character {
   public Oni() {
       super("Oni", 40, 10);

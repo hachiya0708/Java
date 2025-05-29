@@ -1,3 +1,7 @@
+package child;
+
+import parent.Character;
+
 public class Slime extends Character {
   public Slime() {
       super("Slime", 20, 6);
