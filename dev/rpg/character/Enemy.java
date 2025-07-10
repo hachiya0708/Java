@@ -1,3 +1,5 @@
+package rpg.character;
+
 public class Enemy {
     private String name;
     private int hp;
@@ -18,7 +20,7 @@ public class Enemy {
         return hp;
     }
 
-    public int getAttack() {
+    public int attack() {
         return attack;
     }
 

@@ -1,3 +1,7 @@
+package rpg.character;
+
+import java.lang.Math.*;
+
 public class Player {
     private String name;
     private int hp;
@@ -18,8 +22,15 @@ public class Player {
         return hp;
     }
 
-    public int getAttack() {
+    public int attack() {
         return attack;
+    }
+
+    // オーバーロード：相手の名前を渡すと特別処理
+    public int attack(String targetName) {
+        int damage = this.attack + (int)(Math.random() * 5);
+        System.out.println(this.name + "は " + targetName + " に特別攻撃！");
+        return damage;
     }
 
     // ダメージを受けたときにHPを減らす

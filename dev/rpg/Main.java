@@ -1,4 +1,10 @@
+package rpg;
+
 import java.util.Scanner;
+import rpg.character.Player;
+import rpg.character.Enemy;
+import rpg.battle.Battle;
+
 
 public class Main {
     public static void main(String[] args) {
