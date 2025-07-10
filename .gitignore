@@ -30,4 +30,4 @@ replay_pid*
 .DS_Store
 
 # VC Vode
-.vscode/
+./dev/vscode/
