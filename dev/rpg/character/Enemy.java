@@ -1,37 +1,14 @@
 package rpg.character;
 
-public class Enemy {
-    private String name;
-    private int hp;
-    private int attack;
+public class Enemy extends Character {
 
-    // 敵の初期ステータス
-    public Enemy(String name) {
-        this.name = name;
-        this.hp = 80;
-        this.attack = 15;
+    public Enemy(String name, int hp, int attack) {
+        super(name, hp, attack); // 明示的にsuper呼び出し
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
+    // 攻撃メソッドのオーバーライド
+    @Override
     public int attack() {
-        return attack;
-    }
-
-    public void takeDamage(int damage) {
-        this.hp -= damage;
-        if (this.hp < 0) {
-            this.hp = 0;
-        }
-    }
-
-    public boolean isAlive() {
-        return this.hp > 0;
+        return super.attack + (int)(Math.random() * 3);
     }
 }

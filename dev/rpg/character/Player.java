@@ -1,47 +1,21 @@
 package rpg.character;
 
-import java.lang.Math.*;
+public class Player extends Character {
 
-public class Player {
-    private String name;
-    private int hp;
-    private int attack;
-
-    // コンストラクタ：プレイヤーの初期ステータスを設定
-    public Player(String name) {
-        this.name = name;
-        this.hp = 100;         // 初期HP
-        this.attack = 20;      // 初期攻撃力
+    public Player(String name, int hp, int attack) {
+        super(name, hp, attack); // 明示的にsuper呼び出し
     }
 
-    public String getName() {
-        return name;
-    }
-
-    public int getHp() {
-        return hp;
-    }
-
+    // 攻撃メソッドのオーバーライド
+    @Override
     public int attack() {
-        return attack;
+        return super.attack + (int)(Math.random() * 5); // super.field参照
     }
 
-    // オーバーロード：相手の名前を渡すと特別処理
+    // 特殊攻撃（オーバーロード）
     public int attack(String targetName) {
-        int damage = this.attack + (int)(Math.random() * 5);
+        int damage = attack();
         System.out.println(this.name + "は " + targetName + " に特別攻撃！");
         return damage;
-    }
-
-    // ダメージを受けたときにHPを減らす
-    public void takeDamage(int damage) {
-        this.hp -= damage;
-        if (this.hp < 0) {
-            this.hp = 0;
-        }
-    }
-
-    public boolean isAlive() {
-        return this.hp > 0;
     }
 }

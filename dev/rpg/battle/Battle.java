@@ -27,7 +27,8 @@ public class Battle {
                 int damage = player.attack(enemy.getName()); //特殊攻撃
                 enemy.takeDamage(damage);
                 Message.printMessages(enemy.getName() + "に" + damage + "のダメージ！");
-                Message.printMessages(enemy.getName() + "の残りHP: " + enemy.getHp());
+                Message.printMessages("プレイヤー情報: " + player.toString());
+                Message.printMessages("敵情報: " + enemy.toString());
             }
 
             // 敵が倒れたら終了
@@ -40,7 +41,8 @@ public class Battle {
             Message.printMessages(enemy.getName() + "の攻撃！");
             player.takeDamage(enemy.attack());
             Message.printMessages(player.getName() + "は" + enemy.attack() + "のダメージを受けた！");
-            Message.printMessages(player.getName() + "の残りHP: " + player.getHp());
+            Message.printMessages("プレイヤー情報: " + player.toString());
+            Message.printMessages("敵情報: " + enemy.toString());
 
             if (!player.isAlive()) {
                 Message.printMessages(player.getName() + "は倒れてしまった...");

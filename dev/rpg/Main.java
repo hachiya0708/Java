@@ -13,11 +13,15 @@ public class Main {
 
         System.out.println("=== 冒険スタート ===");
         System.out.print("プレイヤーの名前を入力してください：");
-        String name = scanner.nextLine();
+        String pname = scanner.nextLine();
+        System.out.print("プレイヤーのHPを入力してください：");
+        int php = scanner.nextInt();
+        System.out.print("プレイヤーの攻撃力を入力してください：");
+        int pattack = scanner.nextInt();
 
         // プレイヤーと敵を作成
-        Player player = new Player(name);
-        Enemy enemy = new Enemy("スライム");
+        Player player = new Player(pname, php, pattack);
+        Enemy enemy = new Enemy("嫌な上司", 1000, 200);
 
         // 戦闘開始
         Battle battle = new Battle(player, enemy);
