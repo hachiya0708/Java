@@ -1,6 +1,8 @@
 package rpg.character;
 
-public abstract class Character {
+import rpg.character.Attackable;
+
+public abstract class Character implements Attackable {
     protected String name;
     protected int hp;
     protected int attack;
@@ -35,6 +37,9 @@ public abstract class Character {
     // Objectクラスのメソッドをオーバーライド
     @Override
     public String toString() {
-        return name + " [HP: " + hp + ", 攻撃力: " + attack + "]";
+        return name + " [HP: " + hp + ", [攻撃力: " + attack + "]";
     }
+
+    //自己紹介
+    abstract public String introduce();
 }
