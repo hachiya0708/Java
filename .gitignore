@@ -31,3 +31,8 @@ replay_pid*
 
 # VC Vode
 ./dev/vscode/
+
+# ディレクトリ
+build/
+
+.gradle
